@@ -1,3 +1,19 @@
+import streamlit as st
+
+# --- Demo password gate (free Streamlit Cloud) ---
+if "auth" not in st.session_state:
+    st.session_state.auth = False
+
+if not st.session_state.auth:
+    st.title("🔒 Private Demo")
+    st.caption("Authorized users only.")
+    pwd = st.text_input("Enter demo password", type="password")
+    if pwd and pwd == st.secrets.get("DEMO_PASSWORD", ""):
+        st.session_state.auth = True
+        st.rerun()
+    st.stop()
+
+
 import os
 import streamlit as st
 from dotenv import load_dotenv
