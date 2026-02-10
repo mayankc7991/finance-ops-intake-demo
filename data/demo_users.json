@@ -1,0 +1,34 @@
+{
+    "queues": [
+      { "queue_id": "AP_INVOICES", "display_name": "AP Invoices", "default_priority": "Medium", "requires_controller_approval": false },
+      { "queue_id": "AP_PAYMENTS", "display_name": "AP Payments", "default_priority": "Medium", "requires_controller_approval": false },
+      { "queue_id": "VENDOR_MASTER", "display_name": "Vendor Master Data", "default_priority": "High", "requires_controller_approval": true },
+      { "queue_id": "EXPENSES", "display_name": "Employee Expenses", "default_priority": "Low", "requires_controller_approval": false },
+      { "queue_id": "AR_BILLING", "display_name": "AR Billing", "default_priority": "Medium", "requires_controller_approval": false },
+      { "queue_id": "CASH_APP", "display_name": "Cash Application", "default_priority": "Medium", "requires_controller_approval": false },
+      { "queue_id": "AR_ADJUSTMENTS", "display_name": "AR Adjustments", "default_priority": "Medium", "requires_controller_approval": false },
+      { "queue_id": "GL_ACCOUNTING", "display_name": "GL Accounting", "default_priority": "Medium", "requires_controller_approval": true },
+      { "queue_id": "CLOSE_SUPPORT", "display_name": "Close Support", "default_priority": "High", "requires_controller_approval": true }
+    ],
+    "assignees": [
+      { "user_id": "USR-AP-01", "name": "AP Processing Analyst", "email": "ap.analyst@demo-corp.com", "queues": ["AP_INVOICES"] },
+      { "user_id": "USR-AP-02", "name": "AP Payments Specialist", "email": "ap.payments@demo-corp.com", "queues": ["AP_PAYMENTS"] },
+      { "user_id": "USR-VMD-01", "name": "Vendor Master Data Analyst", "email": "vendormaster@demo-corp.com", "queues": ["VENDOR_MASTER"] },
+      { "user_id": "USR-TNE-01", "name": "T&E Analyst", "email": "expenses@demo-corp.com", "queues": ["EXPENSES"] },
+      { "user_id": "USR-AR-01", "name": "AR Billing Analyst", "email": "ar.billing@demo-corp.com", "queues": ["AR_BILLING"] },
+      { "user_id": "USR-AR-02", "name": "Cash Application Analyst", "email": "cashapp@demo-corp.com", "queues": ["CASH_APP"] },
+      { "user_id": "USR-AR-03", "name": "AR Adjustments Specialist", "email": "ar.adjustments@demo-corp.com", "queues": ["AR_ADJUSTMENTS"] },
+      { "user_id": "USR-GL-01", "name": "GL Accountant", "email": "gl.accounting@demo-corp.com", "queues": ["GL_ACCOUNTING"] },
+      { "user_id": "USR-CLS-01", "name": "Close Lead", "email": "close.lead@demo-corp.com", "queues": ["CLOSE_SUPPORT"] }
+    ],
+    "priorities": ["Low", "Medium", "High", "Critical"],
+    "ticket_statuses": ["Open", "Waiting on Requester", "In Progress", "Resolved"],
+    "override_reasons": [
+      "Escalated by Controller Office",
+      "Vendor follow-up / service risk",
+      "Close deadline constraint",
+      "Incorrect initial classification",
+      "Manual reassignment requested"
+    ]
+  }
+  

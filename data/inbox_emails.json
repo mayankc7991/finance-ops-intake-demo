@@ -1,0 +1,123 @@
+[
+    {
+      "email_id": "EML-001",
+      "received_at": "2026-02-01T09:12:00-05:00",
+      "subject": "Invoice submission – Jan freight services (INV 104992)",
+      "from": { "name": "Jules Kramer", "email": "billing@stonefieldlogistics.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [{ "filename": "INV-104992.pdf", "filetype": "pdf" }],
+      "body": "Hello,\n\nPlease find attached our invoice for January freight services.\n\nInvoice #: 104992\nAmount: USD 7,842.17\nPO: PO-77123\nService period: Jan 1–31\n\nLet me know if anything else is needed.\n\nRegards,\nJules Kramer\nStonefield Logistics\n+1 (312) 555-0194"
+    },
+    {
+      "email_id": "EML-002",
+      "received_at": "2026-02-01T15:44:00-05:00",
+      "subject": "RE: Payment status? INV 88713 / overdue",
+      "from": { "name": "Sana Iqbal", "email": "ar@northpeak-chem.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": ["procurement@demo-corp.com"],
+      "attachments": [],
+      "body": "Hi Finance Team,\n\nFollowing up — can you confirm when payment will be released for INV 88713? Terms NET30 and it is now overdue.\n\nInvoice: 88713\nAmount: USD 18,300.00\nPO: PO-66210\nVendor: NorthPeak Chemicals\n\nIf there’s a hold, please advise reason + what you need.\n\nThanks,\nSana\n\n-----Original Message-----\nFrom: Sana Iqbal <ar@northpeak-chem.com>\nSent: Thu, Jan 29, 2026 4:02 PM\nSubject: Payment status? INV 88713"
+    },
+    {
+      "email_id": "EML-003",
+      "received_at": "2026-02-02T08:22:00-05:00",
+      "subject": "URGENT: Bank change request – Apex Industrial (effective immediately)",
+      "from": { "name": "Meghan Rhodes", "email": "ap@apex-industrial.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [{ "filename": "Apex_BankChange_Form.pdf", "filetype": "pdf" }],
+      "body": "Hello,\n\nWe have changed banks and need all future payments updated effective immediately.\n\nVendor: Apex Industrial Supplies\nVendor ID (if you have it): 00018422\nNew bank: BMO\nTransit: 00123\nInstitution: 0001\nAccount: 9876543\n\nPlease confirm once updated.\n\nRegards,\nMeghan Rhodes\nAP Coordinator\nApex Industrial Supplies\n\nNOTE: Please do NOT send payments to the old account."
+    },
+    {
+      "email_id": "EML-004",
+      "received_at": "2026-02-02T11:06:00-05:00",
+      "subject": "FW: Invoice rejected – price mismatch PO-55219 (INV 55501)",
+      "from": { "name": "Kunal Desai", "email": "buyer.ops@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": ["receiving@demo-corp.com"],
+      "attachments": [{ "filename": "INV-55501.pdf", "filetype": "pdf" }],
+      "body": "Finance,\n\nForwarding — invoice failed 3-way match.\n\nPO-55219\nInvoice 55501\nLine 2 price on invoice is $125/unit but PO shows $118.\nGR posted yesterday for full qty.\n\nCan you advise whether we need a PO change or AP can proceed with approved variance?\n\n—Kunal\n\n-----Forwarded message-----\nFrom: billing@everoakpackaging.com\nSent: Tue, Feb 2, 2026 10:41 AM\nSubject: Invoice rejected – please help\n\nHi,\nWe received notice invoice 55501 cannot be processed. Please advise.\nEverOak Packaging"
+    },
+    {
+      "email_id": "EML-005",
+      "received_at": "2026-02-03T09:38:00-05:00",
+      "subject": "Expense report returned — missing receipt? ER-019332",
+      "from": { "name": "Lena Park", "email": "lena.park@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [],
+      "body": "Hi team,\n\nMy expense report ER-019332 got returned but I’m not sure what’s missing.\n\nEmployee: Lena Park (EID 44817)\nReport: ER-019332\nTotal: CAD 312.44\nSubmitted: Jan 29\n\nCan you tell me exactly what I need to fix?\n\nThanks,\nLena"
+    },
+    {
+      "email_id": "EML-006",
+      "received_at": "2026-02-03T16:15:00-05:00",
+      "subject": "Customer invoice needed – BlueNova Retail (PO 900771) – need today",
+      "from": { "name": "Customer Success", "email": "cs@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": ["sales.ops@demo-corp.com"],
+      "attachments": [],
+      "body": "Hi AR,\n\nCan you generate an invoice for customer BlueNova Retail for the Feb 3 shipment?\n\nCustomer: BlueNova Retail\nCustomer ID: C-100882\nPO: 900771\nAmount: USD 42,500.00\nBill-to: BlueNova Retail Inc.\nShip-to: BlueNova DC - Reno\nNeed by: today EOD\n\nThanks,\nMarcos"
+    },
+    {
+      "email_id": "EML-007",
+      "received_at": "2026-02-04T10:03:00-05:00",
+      "subject": "Payment applied wrong customer – need cash reapplication",
+      "from": { "name": "Jenna (Collections)", "email": "collections@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [],
+      "body": "Hi Cash App team,\n\nWe received $9,880.00 from “Summit Fiber LLC” but it was applied to the wrong account (Summit Fabrics).\n\nPayment date: Feb 4\nAmount: USD 9,880.00\nBank ref: 24021988\nCorrect customer: Summit Fiber LLC (C-20911)\nIncorrect customer: Summit Fabrics (C-12003)\n\nCan you move the cash and confirm once corrected?\n\nThanks,\nJenna"
+    },
+    {
+      "email_id": "EML-008",
+      "received_at": "2026-02-05T09:09:00-05:00",
+      "subject": "Credit memo request – damaged items on INV 33018",
+      "from": { "name": "Angela Price", "email": "ap@bluenovaretail.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": ["returns@demo-corp.com"],
+      "attachments": [],
+      "body": "Hello,\n\nRequesting a credit memo for damaged items received on Invoice 33018.\n\nInvoice: 33018\nPO: 900771\nDamage claim: 12 units SKU XZ-440 (crushed packaging)\nRequested credit: USD 1,200.00\n\nWe can share photos if required.\n\nRegards,\nAngela Price\nAP – BlueNova Retail"
+    },
+    {
+      "email_id": "EML-009",
+      "received_at": "2026-02-06T13:22:00-05:00",
+      "subject": "Journal entry request – reclass freight accrual (Jan close)",
+      "from": { "name": "Ravi (FP&A)", "email": "fpa@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": ["controller@demo-corp.com"],
+      "attachments": [],
+      "body": "Hi GL,\n\nNeed a JE to reclass a portion of Jan freight accrual from 6100 to 6125.\n\nEntity: US01\nAmount: USD 27,400\nDr: 6125 Freight – Outbound\nCr: 6100 Freight – Accrual\nEffective date: 2026-01-31\nReason: booked to wrong account during close.\n\nCan you post ASAP and reply with JE number.\n\nThanks,\nRavi"
+    },
+    {
+      "email_id": "EML-010",
+      "received_at": "2026-02-07T09:10:00-05:00",
+      "subject": "Close support: AP accrual variance explanation needed (US01)",
+      "from": { "name": "Nadia (Close & Reporting)", "email": "close@demo-corp.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [],
+      "body": "Morning,\n\nWe need an explanation for the AP accrual variance on US01 for Jan close.\n\nAccount: 210200 AP Accrual\nVariance vs forecast: +USD 84,600\nObserved drivers: freight + packaging\n\nCan someone provide a summary + whether this reverses in Feb?\n\nThanks,\nNadia"
+    },
+    {
+      "email_id": "EML-011",
+      "received_at": "2026-02-08T08:18:00-05:00",
+      "subject": "Invoice follow-up: did you receive INV 104992? (Stonefield)",
+      "from": { "name": "Jules Kramer", "email": "billing@stonefieldlogistics.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [],
+      "body": "Hi,\n\nFollowing up — did you receive INV 104992 we sent last week? Want to ensure it’s in process.\n\nThanks,\nJules\nStonefield Logistics"
+    },
+    {
+      "email_id": "EML-012",
+      "received_at": "2026-02-08T15:02:00-05:00",
+      "subject": "AP Payments: remittance advice needed for last payment (NorthPeak)",
+      "from": { "name": "Sana Iqbal", "email": "ar@northpeak-chem.com" },
+      "to": ["finance.ops@demo-corp.com"],
+      "cc": [],
+      "attachments": [],
+      "body": "Hi,\n\nThanks for the update earlier. Can you send remittance advice for the last payment made to NorthPeak Chemicals? Our team needs it to close open items.\n\nVendor: NorthPeak Chemicals\nInvoice(s): 88713\n\nAppreciate it,\nSana"
+    }
+  ]
+  

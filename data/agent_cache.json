@@ -1,0 +1,285 @@
+{
+    "EML-001": {
+      "classification": { "request_type": "AP_INVOICE_PROCESSING", "confidence": 0.93, "rationale": "Invoice submitted with invoice #, PO, amount, service period, and PDF attachment." },
+      "extraction": {
+        "requester": { "name": "Jules Kramer", "email": "billing@stonefieldlogistics.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-06",
+        "fields": {
+          "vendor_name": "Stonefield Logistics",
+          "invoice_number": "104992",
+          "invoice_amount": 7842.17,
+          "currency": "USD",
+          "po_number": "PO-77123",
+          "service_period": "2026-01-01 to 2026-01-31",
+          "invoice_date": "2026-02-01"
+        },
+        "risk_flags": [],
+        "free_text_summary": "Vendor submitted January freight invoice for PO-77123; AP should validate and process."
+      },
+      "routing_suggestion": { "queue": "AP Invoices", "assignee": "AP Processing Analyst", "priority": "Medium" },
+      "draft_response": { "subject": "Re: Invoice submission – Jan freight services (INV 104992)", "body": "Hi Jules,\n\nThanks — we received INV 104992 for PO-77123 (USD 7,842.17, service period Jan 1–31). We will validate and process through AP.\n\nRegards,\nFinance Operations", "questions_for_requester": [] }
+    },
+  
+    "EML-002": {
+      "classification": { "request_type": "AP_VENDOR_PAYMENT_INQUIRY", "confidence": 0.88, "rationale": "Vendor asking for payment status; references overdue invoice and PO." },
+      "extraction": {
+        "requester": { "name": "Sana Iqbal", "email": "ar@northpeak-chem.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-03",
+        "fields": {
+          "vendor_name": "NorthPeak Chemicals",
+          "invoice_number": "88713",
+          "invoice_amount": 18300.0,
+          "currency": "USD",
+          "po_number": "PO-66210",
+          "invoice_date": "2026-01-02"
+        },
+        "risk_flags": ["Overdue payment inquiry"],
+        "free_text_summary": "Vendor requesting payment status for INV 88713. Confirm hold reason or expected payment date/remittance."
+      },
+      "routing_suggestion": { "queue": "AP Payments", "assignee": "AP Payments Specialist", "priority": "High" },
+      "draft_response": { "subject": "Re: Payment status – INV 88713", "body": "Hi Sana,\n\nThanks for the follow-up. We’re checking the payment status for INV 88713 (PO-66210, USD 18,300). If there is a hold, we’ll confirm the reason and next action.\n\nRegards,\nFinance Operations", "questions_for_requester": [] }
+    },
+  
+    "EML-003": {
+      "classification": { "request_type": "AP_VENDOR_MASTERDATA_CHANGE", "confidence": 0.91, "rationale": "Vendor requests bank change with account details + form attachment (high-risk change)." },
+      "extraction": {
+        "requester": { "name": "Meghan Rhodes", "email": "ap@apex-industrial.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-04",
+        "fields": {
+          "vendor_name": "Apex Industrial Supplies",
+          "vendor_id": "00018422",
+          "change_type": "Bank account update",
+          "bank_name": "BMO",
+          "bank_transit": "00123",
+          "bank_institution": "0001",
+          "bank_account_last4": "6543"
+        },
+        "risk_flags": ["Bank change request (high risk)", "Requires verification callback + dual approval"],
+        "free_text_summary": "Bank details update requested; must follow vendor master data controls and verification."
+      },
+      "routing_suggestion": { "queue": "Vendor Master Data", "assignee": "Vendor Master Data Analyst", "priority": "High" },
+      "draft_response": {
+        "subject": "Re: Bank change request – Apex Industrial",
+        "body": "Hi Meghan,\n\nWe received your request to update banking details. For security, we must complete verification before applying changes.\n\nPlease provide a callback number and preferred time for verification. Once validated, we will process the update and confirm completion.\n\nRegards,\nVendor Master Data – Finance Ops",
+        "questions_for_requester": ["Provide callback number + preferred contact time for verification.", "Confirm the attached form is signed/authorized."]
+      }
+    },
+  
+    "EML-004": {
+      "classification": { "request_type": "AP_3WAY_MATCH_EXCEPTION", "confidence": 0.86, "rationale": "Forwarded invoice rejection; price mismatch between PO and invoice; GR posted." },
+      "extraction": {
+        "requester": { "name": "Kunal Desai", "email": "buyer.ops@demo-corp.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-02",
+        "fields": {
+          "vendor_name": "EverOak Packaging",
+          "invoice_number": "55501",
+          "po_number": "PO-55219",
+          "exception_type": "Price mismatch",
+          "details": "Invoice line 2 price $125/unit vs PO $118/unit; GR posted for full qty."
+        },
+        "risk_flags": ["3-way match exception"],
+        "free_text_summary": "Invoice blocked due to mismatch; need PO amendment or documented approval for variance handling."
+      },
+      "routing_suggestion": { "queue": "AP Invoices", "assignee": "AP Processing Analyst", "priority": "High" },
+      "draft_response": {
+        "subject": "Re: Invoice rejected – PO-55219 / INV 55501",
+        "body": "Hi Kunal,\n\nINV 55501 for PO-55219 is blocked due to a price mismatch (invoice $125/unit vs PO $118/unit). Since GR is posted, we need either a PO update to the approved price or written approval to proceed per AP variance policy.\n\nRegards,\nFinance Operations",
+        "questions_for_requester": ["Is $125/unit the approved price? If yes, update PO-55219 or provide written approval to proceed."]
+      }
+    },
+  
+    "EML-005": {
+      "classification": { "request_type": "EXPENSE_REIMBURSEMENT_ISSUE", "confidence": 0.90, "rationale": "Employee reports expense report returned; includes ER ID, amount, employee ID." },
+      "extraction": {
+        "requester": { "name": "Lena Park", "email": "lena.park@demo-corp.com" },
+        "entity_code": "CA01",
+        "due_date": "2026-02-04",
+        "fields": {
+          "employee_id": "44817",
+          "expense_report_id": "ER-019332",
+          "currency": "CAD",
+          "expense_amount": 312.44,
+          "submitted_date": "2026-01-29"
+        },
+        "risk_flags": [],
+        "free_text_summary": "Expense report returned; likely missing receipt/policy support. Advise specific correction steps."
+      },
+      "routing_suggestion": { "queue": "Employee Expenses", "assignee": "T&E Analyst", "priority": "Medium" },
+      "draft_response": {
+        "subject": "Re: Expense report ER-019332 – returned",
+        "body": "Hi Lena,\n\nThanks — ER-019332 was returned due to missing/invalid support on one or more line items. Please check the return note in the expense tool and re-upload the required receipt(s) where prompted.\n\nIf you paste the flagged line(s), we can confirm exactly what is needed.\n\nRegards,\nFinance Operations",
+        "questions_for_requester": ["Which line item(s) show ‘missing receipt’ or ‘policy exception’ in the tool?"]
+      }
+    },
+  
+    "EML-006": {
+      "classification": { "request_type": "AR_CUSTOMER_INVOICE_REQUEST", "confidence": 0.87, "rationale": "Internal request to generate customer invoice; includes customer ID, PO, amount, urgency." },
+      "extraction": {
+        "requester": { "name": "Customer Success", "email": "cs@demo-corp.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-03",
+        "fields": {
+          "customer_name": "BlueNova Retail",
+          "customer_id": "C-100882",
+          "po_number": "900771",
+          "invoice_amount": 42500.0,
+          "currency": "USD",
+          "bill_to": "BlueNova Retail Inc.",
+          "ship_to": "BlueNova DC - Reno"
+        },
+        "risk_flags": ["EOD urgency"],
+        "free_text_summary": "AR invoice requested for BlueNova Retail shipment tied to PO 900771; needed by EOD."
+      },
+      "routing_suggestion": { "queue": "AR Billing", "assignee": "AR Billing Analyst", "priority": "High" },
+      "draft_response": {
+        "subject": "Re: Customer invoice needed – BlueNova Retail (PO 900771)",
+        "body": "Hi Marcos,\n\nReceived. We’ll generate the invoice for BlueNova Retail (C-100882) against PO 900771 for USD 42,500.\n\nPlease confirm the shipment reference / delivery note number to tie to the invoice.\n\nRegards,\nAR Billing – Finance Ops",
+        "questions_for_requester": ["Confirm shipment reference / delivery note number."]
+      }
+    },
+  
+    "EML-007": {
+      "classification": { "request_type": "AR_CASH_APPLICATION", "confidence": 0.92, "rationale": "Cash misapplied; includes bank ref, correct/incorrect customer, amount." },
+      "extraction": {
+        "requester": { "name": "Jenna (Collections)", "email": "collections@demo-corp.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-05",
+        "fields": {
+          "payment_amount": 9880.0,
+          "currency": "USD",
+          "payment_date": "2026-02-04",
+          "bank_reference": "24021988",
+          "correct_customer": "Summit Fiber LLC (C-20911)",
+          "incorrect_customer": "Summit Fabrics (C-12003)"
+        },
+        "risk_flags": [],
+        "free_text_summary": "Payment applied to wrong customer; reapply using bank reference 24021988."
+      },
+      "routing_suggestion": { "queue": "Cash Application", "assignee": "Cash Application Analyst", "priority": "Medium" },
+      "draft_response": { "subject": "Re: Cash reapplication – Summit Fiber payment", "body": "Hi Jenna,\n\nGot it. We’ll reapply the USD 9,880 payment (bank ref 24021988, Feb 4) to the correct customer account and confirm once updated.\n\nRegards,\nCash Application – Finance Ops", "questions_for_requester": [] }
+    },
+  
+    "EML-008": {
+      "classification": { "request_type": "AR_CREDIT_MEMO_REQUEST", "confidence": 0.85, "rationale": "Customer requests credit memo for damaged goods; provides invoice, PO, amount, reason." },
+      "extraction": {
+        "requester": { "name": "Angela Price", "email": "ap@bluenovaretail.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-07",
+        "fields": {
+          "customer_name": "BlueNova Retail",
+          "invoice_number": "33018",
+          "po_number": "900771",
+          "requested_credit_amount": 1200.0,
+          "currency": "USD",
+          "reason": "Damaged items (12 units SKU XZ-440)"
+        },
+        "risk_flags": ["Credit memo requires approval + evidence"],
+        "free_text_summary": "Credit memo request for damaged items; require photos/claim reference and approval before issuance."
+      },
+      "routing_suggestion": { "queue": "AR Adjustments", "assignee": "AR Adjustments Specialist", "priority": "Medium" },
+      "draft_response": {
+        "subject": "Re: Credit memo request – INV 33018",
+        "body": "Hello Angela,\n\nThanks — we received the credit memo request for INV 33018 (PO 900771) for USD 1,200 due to damaged items.\n\nPlease share photos and any claim/reference number. Once validated and approved, we’ll issue the credit memo and confirm.\n\nRegards,\nAR Adjustments – Finance Ops",
+        "questions_for_requester": ["Please share photos and the claim/reference number (if available)."]
+      }
+    },
+  
+    "EML-009": {
+      "classification": { "request_type": "GL_JOURNAL_ENTRY_REQUEST", "confidence": 0.89, "rationale": "JE request includes entity, effective date, accounts, amount, and reason." },
+      "extraction": {
+        "requester": { "name": "Ravi (FP&A)", "email": "fpa@demo-corp.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-06",
+        "fields": {
+          "effective_date": "2026-01-31",
+          "amount": 27400.0,
+          "currency": "USD",
+          "debit_account": "6125",
+          "credit_account": "6100",
+          "description": "Reclass freight accrual portion from 6100 to 6125"
+        },
+        "risk_flags": ["Close JE request – requires support/backup"],
+        "free_text_summary": "GL JE reclass request for Jan close; post and confirm JE number."
+      },
+      "routing_suggestion": { "queue": "GL Accounting", "assignee": "GL Accountant", "priority": "High" },
+      "draft_response": {
+        "subject": "Re: Journal entry request – freight reclass (Jan close)",
+        "body": "Hi Ravi,\n\nReceived. We’ll prepare and post the JE for US01 effective 2026-01-31: Dr 6125 / Cr 6100 for USD 27,400.\n\nWe’ll reply with the JE number once posted.\n\nRegards,\nGL Accounting – Finance Ops",
+        "questions_for_requester": ["Confirm cost center/segment if required by GL structure."]
+      }
+    },
+  
+    "EML-010": {
+      "classification": { "request_type": "CLOSE_SUPPORT_REQUEST", "confidence": 0.84, "rationale": "Close team requests variance explanation and whether it reverses in Feb." },
+      "extraction": {
+        "requester": { "name": "Nadia (Close & Reporting)", "email": "close@demo-corp.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-07",
+        "fields": {
+          "account": "210200 AP Accrual",
+          "variance_amount": 84600.0,
+          "currency": "USD",
+          "drivers": "Freight + packaging",
+          "question": "Does this reverse in Feb?"
+        },
+        "risk_flags": ["Close deadline constraint"],
+        "free_text_summary": "Close support request: explain AP accrual variance + reversal expectation."
+      },
+      "routing_suggestion": { "queue": "Close Support", "assignee": "Close Lead", "priority": "High" },
+      "draft_response": {
+        "subject": "Re: Close support – AP accrual variance (US01)",
+        "body": "Hi Nadia,\n\nAcknowledged. We’ll review the AP accrual variance (US01, Acct 210200, +USD 84,600) and provide a driver summary and whether it reverses in Feb based on posting timing.\n\nRegards,\nFinance Operations",
+        "questions_for_requester": ["Do you need the commentary in a specific close template format?"]
+      }
+    },
+  
+    "EML-011": {
+      "classification": { "request_type": "AP_VENDOR_PAYMENT_INQUIRY", "confidence": 0.79, "rationale": "Follow-up asking if invoice was received/processing; references prior invoice number." },
+      "extraction": {
+        "requester": { "name": "Jules Kramer", "email": "billing@stonefieldlogistics.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-10",
+        "fields": {
+          "vendor_name": "Stonefield Logistics",
+          "invoice_number": "104992",
+          "invoice_amount": 7842.17,
+          "currency": "USD"
+        },
+        "risk_flags": ["Duplicate thread / follow-up"],
+        "free_text_summary": "Vendor follow-up: confirm invoice receipt and whether it is in process."
+      },
+      "routing_suggestion": { "queue": "AP Payments", "assignee": "AP Payments Specialist", "priority": "Medium" },
+      "draft_response": {
+        "subject": "Re: Invoice follow-up – INV 104992",
+        "body": "Hi Jules,\n\nYes — we received INV 104992 and it is currently in AP processing/validation. If anything is needed (e.g., tax detail or remittance contact), we’ll reach out.\n\nRegards,\nFinance Operations",
+        "questions_for_requester": []
+      }
+    },
+  
+    "EML-012": {
+      "classification": { "request_type": "AP_VENDOR_PAYMENT_INQUIRY", "confidence": 0.82, "rationale": "Vendor requests remittance advice for a payment related to invoice; typical AP payments inquiry." },
+      "extraction": {
+        "requester": { "name": "Sana Iqbal", "email": "ar@northpeak-chem.com" },
+        "entity_code": "US01",
+        "due_date": "2026-02-10",
+        "fields": {
+          "vendor_name": "NorthPeak Chemicals",
+          "invoice_number": "88713",
+          "request_type_detail": "Remittance advice"
+        },
+        "risk_flags": [],
+        "free_text_summary": "Vendor requests remittance advice for reconciliation."
+      },
+      "routing_suggestion": { "queue": "AP Payments", "assignee": "AP Payments Specialist", "priority": "Medium" },
+      "draft_response": {
+        "subject": "Re: Remittance advice – NorthPeak Chemicals",
+        "body": "Hi Sana,\n\nUnderstood. We’ll provide remittance advice for the payment related to INV 88713 and send it shortly.\n\nRegards,\nAP Payments – Finance Ops",
+        "questions_for_requester": ["If multiple invoices were included in the payment, please confirm which ones you need remittance for."]
+      }
+    }
+  }
+  
